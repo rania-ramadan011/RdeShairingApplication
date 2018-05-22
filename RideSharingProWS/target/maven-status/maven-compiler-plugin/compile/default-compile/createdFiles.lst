@@ -3,7 +3,7 @@ com\mycompany\ridesharingprows\DriverCarInfo_.class
 WS\UserWs.class
 com\mycompany\ridesharingprows\User.class
 WSInterfaces\MyUserDao.class
-WSInterfaces\DriverDao.class
 com\mycompany\ridesharingprows\User_.class
+WSInterfaces\DriverDao.class
 WS\DriverWs.class
 com\mycompany\ridesharingprows\DriverCarInfo.class

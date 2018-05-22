@@ -28,7 +28,8 @@ public interface MyUserDao extends CrudRepository<User,Integer>{
      //----------------------------------------------*
     User findByIdUser(int idUser);
     //-----------------------------------------------*
-    User findByEMailAndPasword(String email,String password);
+    @Query("SELECT u FROM User u WHERE u.eMail = ?1 and u.password = ?2")
+    User findByEMailAndPassword(String email,String password);
     //-----------------------------------------------*
     
     

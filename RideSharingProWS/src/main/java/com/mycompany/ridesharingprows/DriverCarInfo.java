@@ -26,14 +26,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author TECHNOLOGY CITY
+ * @author Hossam
  */
 @Entity
 @Table(name = "driver_car_info")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "DriverCarInfo.findAll", query = "SELECT d FROM DriverCarInfo d")
-    , @NamedQuery(name = "DriverCarInfo.findByDriveCarID", query = "SELECT d FROM DriverCarInfo d WHERE d.driveCarID = ?1")
+    , @NamedQuery(name = "DriverCarInfo.findByDriveCarID", query = "SELECT d FROM DriverCarInfo d WHERE d.driveCarID = :driveCarID")
     , @NamedQuery(name = "DriverCarInfo.findByOwnername", query = "SELECT d FROM DriverCarInfo d WHERE d.ownername = :ownername")
     , @NamedQuery(name = "DriverCarInfo.findByDriverLicenseNum", query = "SELECT d FROM DriverCarInfo d WHERE d.driverLicenseNum = :driverLicenseNum")
     , @NamedQuery(name = "DriverCarInfo.findByOwnerAddress", query = "SELECT d FROM DriverCarInfo d WHERE d.ownerAddress = :ownerAddress")
@@ -273,7 +273,7 @@ public class DriverCarInfo implements Serializable {
 
     @Override
     public String toString() {
-        return "WS.DriverCarInfo[ driveCarID=" + driveCarID + " ]";
+        return "com.mycompany.ridesharingprows.DriverCarInfo[ driveCarID=" + driveCarID + " ]";
     }
     
 }

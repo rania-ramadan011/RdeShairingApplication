@@ -110,50 +110,72 @@
                 android:drawableLeft="@drawable/date"/>
         </android.support.design.widget.TextInputLayout>
         <!-- RadioButton-->
-        <RadioGroup
-            android:id="@+id/radioSex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-
-            <RadioButton
-                android:id="@+id/radioMale"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/male"
-                android:checked="true" />
-
-            <RadioButton
-                android:id="@+id/radioFemale"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/famle" />
-
-        </RadioGroup>
 
         <!-- RadioButton-->
-        <RadioGroup
-            android:id="@+id/radioUserType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-
-            <RadioButton
-                android:id="@+id/radioDriver"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/radio_Driver"
-                android:checked="true" />
-
-            <RadioButton
-                android:id="@+id/radioPassenger"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/radio_Passenger" />
-
-        </RadioGroup>
 
         <!-- Signup Button -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/radioUserType"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:id="@+id/radioDriver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/radio_Driver" />
+
+                <RadioButton
+                    android:id="@+id/radioPassenger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radio_Passenger" />
+
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/radioSex"
+                android:layout_width="188dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/famle" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/personalimage"
+            android:layout_width="149dp"
+            android:layout_height="134dp"
+            app:srcCompat="@drawable/ic_menu_gallery" />
+
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_signup"
             android:layout_width="fill_parent"

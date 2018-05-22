@@ -26,26 +26,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author TECHNOLOGY CITY
+ * @author Hossam
  */
 @Entity
 @Table(name = "user")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
-    , @NamedQuery(name = "User.findByIdUser", query = "SELECT u FROM User u WHERE u.idUser = :idUser")
+    , @NamedQuery(name = "User.findByIdUser", query = "SELECT u FROM User u WHERE u.idUser = ?1")
     , @NamedQuery(name = "User.findByUserName", query = "SELECT u FROM User u WHERE u.userName = :userName")
     , @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password")
-    , @NamedQuery(name = "User.findByEMail", query = "SELECT u FROM User u WHERE u.eMail =?1")
+    , @NamedQuery(name = "User.findByEMail", query = "SELECT u FROM User u WHERE u.eMail = :eMail")
     , @NamedQuery(name = "User.findByGender", query = "SELECT u FROM User u WHERE u.gender = :gender")
     , @NamedQuery(name = "User.findByMobile", query = "SELECT u FROM User u WHERE u.mobile = :mobile")
     , @NamedQuery(name = "User.findByBirthDate", query = "SELECT u FROM User u WHERE u.birthDate = :birthDate")
     , @NamedQuery(name = "User.findByUserphoto", query = "SELECT u FROM User u WHERE u.userphoto = :userphoto")
     , @NamedQuery(name = "User.findByNationalid", query = "SELECT u FROM User u WHERE u.nationalid = :nationalid")
-    , @NamedQuery(name = "User.findByPending", query = "SELECT u FROM User u WHERE u.pending = :pending")
-    , @NamedQuery(name = "User.findByEMailAndPasword", query = "SELECT u FROM User u WHERE u.eMail =?1 And u.password=?2")
-       
-})
+    , @NamedQuery(name = "User.findByPending", query = "SELECT u FROM User u WHERE u.pending = :pending")})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -233,7 +230,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "WS.User[ idUser=" + idUser + " ]";
+        return "com.mycompany.ridesharingprows.User[ idUser=" + idUser + " ]";
     }
     
 }

@@ -16,28 +16,42 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rania.itigraduationproject.PureClasses.User;
-
-import org.w3c.dom.Text;
+import com.example.rania.itigraduationproject.model.User;
+import com.example.rania.itigraduationproject.remote.CheckInternetConnection;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     TextView username;
+    TextView email;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        if(!CheckInternetConnection.isNetworkAvailable(this))
+        {
+            CheckInternetConnection.bulidDuligo(this);
+        }
+
+            setContentView(R.layout.activity_home);
+
 
         Intent intent=getIntent();
         User user=(User) intent.getSerializableExtra("user");
+        Toast.makeText(this, "Username:"+user.getUserName(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Email:"+user.getEmail(), Toast.LENGTH_SHORT).show();
+
+//        User user = intent
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //al7agaaaaaaaaaat de ya rania ms mwgoooooda f al activity homeeeeeeeee
+        email=(TextView)findViewById(R.id.usermail) ;
         username=(TextView)findViewById(R.id.nameuser);
 
 
-        username.setText(user.getUserName());
+//        username.setText(user.getUserName());
+//        email.setText(user.getUserName());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

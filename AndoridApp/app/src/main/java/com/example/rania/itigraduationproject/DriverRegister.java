@@ -9,8 +9,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rania.itigraduationproject.Interfaces.Service;
-import com.example.rania.itigraduationproject.PureClasses.DriverCarInfo;
-import com.example.rania.itigraduationproject.PureClasses.User;
+import com.example.rania.itigraduationproject.model.DriverCarInfo;
+import com.example.rania.itigraduationproject.model.User;
+import com.example.rania.itigraduationproject.remote.CheckInternetConnection;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,10 +33,17 @@ public class DriverRegister extends AppCompatActivity {
     private static Retrofit retrofit = null;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_driver_register);
+        if(!CheckInternetConnection.isNetworkAvailable(this))
+        {
+            CheckInternetConnection.bulidDuligo(this);
+        }
+
+            setContentView(R.layout.activity_driver_register);
+
         //TextView
         ownerCarName = (TextView) findViewById(R.id.car_ownername);
         ownerCarAddress = (TextView) findViewById(R.id.ownerCaraddress);
